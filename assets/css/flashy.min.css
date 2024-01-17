@@ -1,0 +1,344 @@
+/*!
+  Flashy - jQuery Lightbox & Popup Plugin
+  @name flashy.css
+  @description jQuery plugin for creating responsive lightboxes & popups with focus on performance and effects
+  @author Max Lavretiev
+  @site http://www.avirtum.com
+  @copyright (c) Max Lavretiev
+*/
+.flashy-container .flashy-content-outer,
+.flashy-overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-direction: normal;
+}
+
+.flashy-overlay,
+body.flashy-active {
+  overflow: hidden;
+}
+
+body.flashy-active .flashy-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.flashy-overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateZ(1000px);
+  transform: translateZ(1000px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1002;
+  outline: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.flashy-container .flashy-content-outer {
+  display: flex;
+  position: absolute;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+}
+
+.flashy-container .flashy-content-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 7% 5% 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.flashy-container .flashy-content {
+  display: inline-block;
+  padding: 1vw;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-container .flashy-content * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flashy-container .flashy-content.flashy-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.flashy-container .flashy-content.flashy-error {
+  width: auto !important;
+  border: 1px solid #a94442;
+  -webkit-box-shadow: 0 0 40px rgba(169, 68, 66, .9);
+  box-shadow: 0 0 40px rgba(169, 68, 66, .9);
+  background-color: #f2dede;
+  color: #a94442;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.flashy-overlay .flashy-numeration,
+.flashy-overlay .flashy-title {
+  left: 0;
+  line-height: 38px;
+  padding: 0 10px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: .6px;
+}
+
+.flashy-container .flashy-content.flashy-image img {
+  max-width: 100%;
+}
+
+.flashy-container .flashy-content.flashy-ajax,
+.flashy-container .flashy-content.flashy-inline {
+  width: 100%;
+}
+
+.flashy-container .flashy-content.flashy-iframe iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+}
+
+.flashy-container .flashy-content.flashy-video {
+  width: 78vw;
+  height: 45.344vw;
+}
+
+.flashy-container .flashy-content.flashy-video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #000;
+}
+
+@media (min-width:768px) {
+  .flashy-container .flashy-content.flashy-iframe {
+    width: 90%;
+    height: 70vh;
+  }
+
+  .flashy-container .flashy-content.flashy-video {
+    width: 640px;
+    height: 360px;
+  }
+}
+
+@media (min-width:992px) {
+
+  .flashy-container .flashy-content.flashy-ajax,
+  .flashy-container .flashy-content.flashy-inline {
+    width: 80%;
+    max-width: 1200px;
+  }
+
+  .flashy-container .flashy-content.flashy-iframe {
+    width: 90%;
+    height: 70vh;
+  }
+
+  .flashy-container .flashy-content.flashy-video {
+    width: 960px;
+    height: 540px;
+  }
+}
+
+.flashy-overlay.flashy-fullscreen .flashy-close,
+.flashy-overlay.flashy-fullscreen .flashy-next,
+.flashy-overlay.flashy-fullscreen .flashy-numeration,
+.flashy-overlay.flashy-fullscreen .flashy-prev,
+.flashy-overlay.flashy-fullscreen .flashy-title {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.flashy-overlay .flashy-numeration {
+  position: absolute;
+  top: 0;
+  z-index: 1003;
+  background-color: rgba(0, 0, 0, .8);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-overlay .flashy-close,
+.flashy-overlay .flashy-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1003;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  transition: all .3s;
+}
+
+.flashy-overlay .flashy-numeration.flashy-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.flashy-overlay .flashy-title {
+  bottom: 0;
+  transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-overlay .flashy-title.flashy-show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.flashy-overlay .flashy-close {
+  top: 105px;
+  width: 35px;
+  height: 35px;
+  padding: 15px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiIHZpZXdCb3g9Ii01IC01IDI0IDI0IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IC01IC01IDI0IDI0IiB4bWw6c3BhY2U9InByZXNlcnZlIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMTMuNywwLjNjLTAuNC0wLjQtMS0wLjQtMS40LDBMNyw1LjZMMS43LDAuM2MtMC40LTAuNC0xLTAuNC0xLjQsMGMtMC40LDAuNC0wLjQsMSwwLDEuNEw1LjYsN2wtNS4zLDUuM2MtMC40LDAuNC0wLjQsMSwwLDEuNEMwLjUsMTMuOSwwLjcsMTQsMSwxNHMwLjUtMC4xLDAuNy0wLjNMNyw4LjRsNS4zLDUuM2MwLjIsMC4yLDAuNSwwLjMsMC43LDAuM3MwLjUtMC4xLDAuNy0wLjNjMC4zOTktMC40LDAuMzk5LTEsMC0xLjRMOC40LDdsNS4zLTUuM0MxNC4xLDEuMywxNC4xLDAuNywxMy43LDAuM3oiLz48L3N2Zz4=);
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all .3s;
+  opacity: .8;
+}
+
+.flashy-overlay .flashy-close:hover {
+  opacity: 1;
+}
+
+.flashy-overlay .flashy-next,
+.flashy-overlay .flashy-prev {
+  position: absolute;
+  top: 54vh;
+  z-index: 1003;
+  width: 28px;
+  height: 28px;
+  margin-top: -34px;
+  padding: 20px 5px;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-overlay .flashy-next.flashy-show,
+.flashy-overlay .flashy-prev.flashy-show {
+  pointer-events: auto;
+  opacity: .8;
+}
+
+.flashy-overlay .flashy-next.flashy-show:hover,
+.flashy-overlay .flashy-prev.flashy-show:hover {
+  opacity: 1;
+}
+
+.flashy-overlay .flashy-prev {
+  left: 0;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyOHB4IiBoZWlnaHQ9IjI4cHgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjggMjgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0zLjI5MywxNC43MDdMMTEsMjIuNDE0TDEyLjQxNCwyMWwtNi02SDI0YzAuNTUzLDAsMS0wLjQ0OCwxLTFzLTAuNDQ3LTEtMS0xSDYuNDE0bDYtNkwxMSw1LjU4NmwtNy43MDcsNy43MDdDMi45MDIsMTMuNjg0LDIuOTAyLDE0LjMxNiwzLjI5MywxNC43MDd6Ii8+PC9zdmc+);
+}
+
+.flashy-overlay .flashy-next {
+  right: 0;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIyOHB4IiBoZWlnaHQ9IjI4cHgiIHZpZXdCb3g9IjAgMCAyOCAyOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjggMjgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0yNC43MDcsMTMuMjkzTDE3LDUuNTg2TDE1LjU4Niw3bDYsNkg0Yy0wLjU1MywwLTEsMC40NDgtMSwxczAuNDQ3LDEsMSwxaDE3LjU4NmwtNiw2TDE3LDIyLjQxNGw3LjcwNy03LjcwN0MyNS4wOTgsMTQuMzE2LDI1LjA5OCwxMy42ODQsMjQuNzA3LDEzLjI5M3oiLz48L3N2Zz4=);
+}
+
+.flashy-preloader {
+  z-index: 2002;
+  width: 80px;
+  height: 80px;
+  -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 40px rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .25);
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTDkiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMTM4cHgiIGhlaWdodD0iMTM4cHgiIHZpZXdCb3g9IjgxIDgxIDEzOCAxMzgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgODEgODEgMTM4IDEzOCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTIxOSwxNTBjMC0zOC4xLTMwLjktNjktNjktNjljLTM4LjEwMSwwLTY5LDMwLjktNjksNjkgTTkyLjcsMTUwYzAtMzEuNSwyNS41LTU3LjMsNTcuMy01Ny4zczU3LjMsMjUuOCw1Ny4zLDU3LjMiLz48L3N2Zz4=);
+  background-size: cover;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-animation: flashy-spin 1.2s infinite linear;
+  animation: flashy-spin 1.2s infinite linear;
+  border-radius: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flashy-preloader.flashy-show {
+  opacity: 1;
+}
+
+@-webkit-keyframes flashy-spin {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes flashy-spin {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
